@@ -73,3 +73,23 @@ this.result$ = Observable.forkJoin(
 );
 
 this.result$.subscribe(([resA, resB, resC]) => ...)
+------------------------------------------------------------
+async function firstAsync() {
+  return 27;
+}
+
+firstAsync().then(alert); // 27
+--------------------------------------
+async function firstAsync() {
+    let promise = new Promise((res, rej) => {
+        setTimeout(() => res("Now it's done!"), 1000)
+    });
+
+    // wait until the promise returns us a value
+    let result = await promise; 
+  
+    // "Now it's done!"
+    alert(result); 
+    }
+};
+firstAsync();
