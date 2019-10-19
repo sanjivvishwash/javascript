@@ -1,0 +1,11 @@
+  async msg() {    
+    return new Promise(resolve => {
+        resolve('yyyy');
+    });
+   
+  }
+  async ngOnInit() {
+    let x= await this.msg();
+    console.log(x);    
+    console.log('y');    
+  }
