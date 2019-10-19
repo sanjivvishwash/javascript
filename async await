@@ -65,3 +65,11 @@ msg(); // Nope
 msg(); // Nope 
 msg(); // Nope 
 msg(); // Lucky!!
+===================================
+this.result$ = Observable.forkJoin(
+  this.serviceA.get(),
+  this.serviceB.get(),
+  this.serviceC.get()
+);
+
+this.result$.subscribe(([resA, resB, resC]) => ...)
