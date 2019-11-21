@@ -18,54 +18,6 @@
 
 msg();
 ================================================
-async function hello() {
-  return 'Hello Alligator!';
-}
-
-const b = hello();
-
-b.then(x => console.log(x)); // Hello Alligator!
-…or just this:
-
-async function hello() {
-  return 'Hello Alligator!';
-}
-
-hello().then(x => console.log(x)); // Hello Alligator!
-=====================================================
-const msg = async () => {
-  const msg = await scaryClown();
-  console.log('Message:', msg);
-}
-========================================
-function yayOrNay() {
-  return new Promise((resolve, reject) => {
-    const val = Math.round(Math.random() * 1); // 0 or 1, at random
-
-    val ? resolve('Lucky!!') : reject('Nope ');
-  });
-}
-
-async function msg() {
-  try {
-    const msg = await yayOrNay();
-    console.log(msg);
-  } catch(err) {
-    console.log(err);
-  }
-}
-
-msg(); // Lucky!!
-msg(); // Lucky!!
-msg(); // Lucky!!
-msg(); // Nope 
-msg(); // Lucky!!
-msg(); // Nope 
-msg(); // Nope 
-msg(); // Nope 
-msg(); // Nope 
-msg(); // Lucky!!
-===================================
 this.result$ = Observable.forkJoin(
   this.serviceA.get(),
   this.serviceB.get(),
@@ -74,22 +26,3 @@ this.result$ = Observable.forkJoin(
 
 this.result$.subscribe(([resA, resB, resC]) => ...)
 ------------------------------------------------------------
-async function firstAsync() {
-  return 27;
-}
-
-firstAsync().then(alert); // 27
---------------------------------------
-async function firstAsync() {
-    let promise = new Promise((res, rej) => {
-        setTimeout(() => res("Now it's done!"), 1000)
-    });
-
-    // wait until the promise returns us a value
-    let result = await promise; 
-  
-    // "Now it's done!"
-    alert(result); 
-    }
-};
-firstAsync();
