@@ -26,3 +26,6 @@ this.result$ = Observable.forkJoin(
 
 this.result$.subscribe(([resA, resB, resC]) => ...)
 ------------------------------------------------------------
+async function test3() {
+  return await Promise.resolve(5);
+}
