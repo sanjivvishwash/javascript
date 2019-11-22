@@ -1,3 +1,5 @@
+https://stackoverflow.com/questions/35754586/format-date-as-dd-mm-yyyy-using-pipes
+
 import { Pipe, PipeTransform } from '@angular/core';
 import { DatePipe } from '@angular/common';
 @Pipe({
