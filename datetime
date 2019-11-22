@@ -1,0 +1,35 @@
+import { Pipe, PipeTransform } from '@angular/core';
+import { DatePipe } from '@angular/common';
+@Pipe({
+    name: 'dateFormatPipe',
+})
+export class dateFormatPipe implements PipeTransform {
+    transform(value: string) {
+       var datePipe = new DatePipe("en-US");
+        value = datePipe.transform(value, 'dd/MM/yyyy');
+        return value;
+    }
+}
+
+   import { Pipe, PipeTransform } from '@angular/core';
+   import { DatePipe } from '@angular/common';
+   @Pipe({
+     name: 'customDate'
+   })
+   export class CustomDatePipe extends
+                DatePipe implements PipeTransform {
+     transform(value: any, args?: any): any {
+       return super.transform(value, "EEEE d MMMM y h:mm a");
+     }
+   }
+import { Pipe, PipeTransform } from '@angular/core'
+import * as moment from 'moment'
+@Pipe({
+   name: 'formatDate'
+})
+export class DatePipe implements PipeTransform {
+   transform(date: any, args?: any): any {
+     let d = new Date(date)
+     return moment(d).format('DD/MM/YYYY')
+   }
+}
